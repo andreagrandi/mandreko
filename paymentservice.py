@@ -39,7 +39,5 @@ class PaymentConsumer(object):
 
     @event_handler("payments", "payment_received")
     def handle_event(self, payload):
-        # import ipdb; ipdb.set_trace()
-
         print("payments_consumer received:", payload)
         send_payment_email(payload=payload)
