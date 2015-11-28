@@ -70,7 +70,7 @@ def test_payment_consumer_integration_container_factory(
         hook()
 
         # Give the service the proper time to send the message to RabbitMQ
-        time.sleep(2)
+        time.sleep(1)
 
         assert send_template.called is True
 
@@ -94,6 +94,6 @@ def test_payment_consumer_integration_runner_factory(
         hook()
 
         # Give the service the proper time to send the message to RabbitMQ
-        time.sleep(2)
+        time.sleep(1)
 
         assert send_template.called is True
