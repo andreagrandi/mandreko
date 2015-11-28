@@ -11,7 +11,7 @@ class PaymentService(object):
 
     dispatch = EventDispatcher()
 
-    @timer(interval=5)
+    @timer(interval=10)
     def emit_event(self):
 
         payload = {
@@ -39,5 +39,5 @@ class PaymentConsumer(object):
 
     @event_handler("payments", "payment_received")
     def handle_event(self, payload):
-        print("payments_consumer received:", payload)
+        print("payments_consumer received: ", payload)
         send_payment_email(payload=payload)
